@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objednavkovy formular</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Autosalon - objednavkový formulař</h1>
+    </header>
+    <main>
+      <form id="order">
+
+        <fieldset>
+          <legend>Značka vozu</legend>
+          <label for="car">Vyberte značku vozu</label>
+          <select class="input" name="car" id="car">
+            <option value="1500000">Mercedes 1 500 000 Kč</option>
+            <option value="1200000">Volvo 1 200 000 Kč</option>
+            <option value="1350000">Audi 1 350 000 Kč</option>
+            <option value="1400000">BMW 1 400 000 Kč</option>
+          </select>
+        </fieldset>
+
+        <br />
+        <fieldset>
+          <legend>Povrchová úprava</legend>
+          <input class="input" type="radio" id="basic" name="color" value="basic" checked />
+          <label for="basic">základní barva (bez příplatku)</label><br />
+          <input class="input" type="radio" id="lak" name="color" value="lak" />
+          <label for="lak">pálený lak (s příplatkem 5% ze základní ceny vozu)</label><br />
+          <input class="input" type="radio" id="metal" name="color" value="metal" />
+          <label for="metal">metalická barva (s příplatkem 7% ze základní ceny vozu)</label>
+        </fieldset>
+        <br />
+
+        <fieldset>
+          <legend>Dodatečná vybava</legend>
+          <input class="input" type="checkbox" id="parcCam" name="vybava" value="parcCam" />
+          <label for="parcCam"> Parkovací kamery (+10 000 Kč)</label><br />
+          <input class="input" type="checkbox" id="wheels" name="vybava" value="wheels" />
+          <label for="wheels"> Litá kola (+20 000 Kč)</label><br />
+          <input class="input" type="checkbox" id="leather" name="vybava" value="leather" />
+          <label for="leather"> Kožené sedačky (+50 000 Kč) </label><br />
+          <input class="input" type="checkbox" id="tuning" name="vybava" value="tuning" />
+          <label for="tuning"> Tuningova úprava (+20% ze základní ceny vozu)</label><br />
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>Cena</legend>
+          <label for="expected">Zadejte cenu, která je pro Vás optimální</label><input class="input" type="text"
+            id="expected" name="expected" /><br />
+          <button type="button" onclick="calculate()">Výpočet ceny</button>
+          <p id="outputVyslCena"></p>
+          <p id="priceInfo"></p>
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>Email</legend>
+          <label for="email"> Zadejte email</label>
+          <input type="email" id="email" name="email" placeholder="xxxxx@xxxx.xx" />
+          <p id="error"></p>
+        </fieldset>
+        <br />
+        <button type="submit" id="submit" form="#order">Odeslat</button>
+      </form>
+    </main>
+    <footer></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
